@@ -1,0 +1,297 @@
+/* assets/css/style.css - Sistem Informasi Manajemen Parkir */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #64748b;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --info-color: #06b6d4;
+    --dark-color: #0f172a;
+    --sidebar-bg: #0f172a;
+    --sidebar-color: #94a3b8;
+    --sidebar-active-bg: #1e293b;
+    --sidebar-active-text: #ffffff;
+    --body-bg: #f1f5f9;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--body-bg);
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+/* Wrapper Layout */
+.app-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar Styling */
+.app-sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-color);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sidebar-brand i {
+    font-size: 1.5rem;
+    color: #38bdf8;
+}
+
+.sidebar-menu {
+    padding: 1rem 0.75rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.sidebar-heading {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: #64748b;
+    padding: 0.75rem 0.75rem 0.25rem;
+}
+
+.sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    color: var(--sidebar-color);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-nav-link i {
+    font-size: 1.15rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.sidebar-nav-link:hover {
+    background-color: var(--sidebar-active-bg);
+    color: #ffffff;
+}
+
+.sidebar-nav-link.active {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.sidebar-user {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Main Content Area */
+.app-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* Navbar Top */
+.app-navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.content-container {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Stat Cards */
+.stat-card {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-icon.primary { background-color: #eff6ff; color: #2563eb; }
+.stat-icon.success { background-color: #ecfdf5; color: #10b981; }
+.stat-icon.warning { background-color: #fffbeb; color: #f59e0b; }
+.stat-icon.info { background-color: #ecfeff; color: #06b6d4; }
+.stat-icon.danger { background-color: #fef2f2; color: #ef4444; }
+
+/* Custom Badge */
+.badge-role {
+    padding: 0.35em 0.75em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 9999px;
+}
+
+.badge-role-admin { background-color: #fee2e2; color: #991b1b; }
+.badge-role-petugas { background-color: #dbeafe; color: #1e40af; }
+.badge-role-owner { background-color: #fef3c7; color: #92400e; }
+
+.badge-status-masuk {
+    background-color: #dcfce7;
+    color: #15803d;
+    font-weight: 600;
+    padding: 0.35rem 0.65rem;
+    border-radius: 0.5rem;
+}
+
+.badge-status-keluar {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-weight: 600;
+    padding: 0.35rem 0.65rem;
+    border-radius: 0.5rem;
+}
+
+/* Card Table Container */
+.data-card {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.data-card .card-header {
+    background: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+}
+
+/* Plat Nomor Visual Badge */
+.plat-badge {
+    display: inline-block;
+    background: #0f172a;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 0.35rem;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+}
+
+/* Ticket Print Stylesheet */
+.ticket-container {
+    width: 320px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 1.25rem;
+    border: 1px dashed #94a3b8;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.ticket-header {
+    text-align: center;
+    border-bottom: 2px dashed #334155;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.ticket-barcode {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.ticket-footer {
+    text-align: center;
+    border-top: 2px dashed #334155;
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .ticket-container, .ticket-container * {
+        visibility: visible;
+    }
+    .ticket-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100% !important;
+        max-width: 300px !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 5px !important;
+        margin: 0 !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* Area capacity progress bar */
+.area-capacity-bar {
+    height: 10px;
+    border-radius: 5px;
+    background-color: #e2e8f0;
+    overflow: hidden;
+}
+
